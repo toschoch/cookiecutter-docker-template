@@ -20,5 +20,5 @@ Installation / Usage
 --------------------
 Create project from template with cookiecutter
 ```
-cookiecutter git+<git-url>
+cookiecutter git+https://github.com/toschoch/cookiecutter-docker-template.git
 ```
