@@ -1,8 +1,8 @@
 {
     "full_name": "Your name",
     "email": "Your address email (eq. you@example.com)",
-	"project_name": "Python Package",
+	"project_name": "Docker Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-	"description": "A python package that can be installed with pip.",
+	"description": "A docker project doing awesome stuff.",
 	"version": "0.0.1"
 }
