@@ -13,6 +13,12 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Change-Log
 ----------
+##### 0.0.2
+* fixed default cookiecutter values
+* added basic tests
+* update readme
+* added dockerfile and compatible readme
+
 ##### 0.0.1
 * initial version
 
