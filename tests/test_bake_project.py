@@ -35,14 +35,14 @@ def test_project_tree(cookies):
     assert result.exit_code == 0
     assert result.exception is None
     assert result.project.basename == 'test_project'
-    assert read(result.project.join('README.md'))=="""Python Package
+    assert read(result.project.join('README.md'))=="""Docker Project
 ===============================
 author: Your name
 
 Overview
 --------
 
-A python package that can be installed with pip.
+A docker project doing awesome stuff.
 
 
 Change-Log
