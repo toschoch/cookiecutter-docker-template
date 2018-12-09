@@ -23,26 +23,29 @@ def isTag() {
     }
     return false
 }
-pipeline {
-    stages {
-        stage('Checkout') {
-            checkout scm
+node('docker') {
+    stage('Checkout') {
+        checkout scm
+    }
+    
+    stage('Build Image') {
+        withCredentials([
+            usernamePassword(credentialsId: 'docker public', 
+            usernameVariable: 'USERNAME', 
+            passwordVariable: 'PASSWORD')]) {
+            def builtImage = docker.build("${USERNAME}/{{cookiecutter.project_slug}}",".")
         }
-        
-        stage('Build Image') {
+    }
+
+    stage('Push Image') {
+        docker.withRegistry('','docker public') {
             withCredentials([
                 usernamePassword(credentialsId: 'docker public', 
                 usernameVariable: 'USERNAME', 
                 passwordVariable: 'PASSWORD')]) {
-                def builtImage = docker.build("${USERNAME}/{{cookiecutter.project_slug}}")
-            }
-        }
-
-        stage('Push Image') {
-            when { tag "release-*" }
-            docker.withRegistry('https://hub.docker.com/','docker public') {
-                builtImage.push()
-            }
+                    def builtImage = docker.build("${USERNAME}/{{cookiecutter.project_slug}}",".")
+                    builtImage.push()
+                }
         }
     }
 }
