@@ -13,6 +13,15 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Change-Log
 ----------
+##### 0.0.3
+* added .drone.yml to backed project
+* added tagging functionality to template
+* fixed jenkinsfile
+* fixed bake test
+* stupid jenkins user
+* fixed pip -r in jenkinsfile
+* added jenkins ci/cd files
+
 ##### 0.0.2
 * fixed default cookiecutter values
 * added basic tests
