@@ -31,7 +31,7 @@ def inside_dir(dirpath):
 
 
 def test_project_tree(cookies):
-    result = cookies.bake(template=CCDS_ROOT, extra_context={'project_slug': 'test_project'})
+    result = cookies.bake(template=CCDS_ROOT, extra_context={'project_slug': 'test_project', 'docker_user':'aslkdf'})
     assert result.exit_code == 0
     assert result.exception is None
     assert result.project.basename == 'test_project'

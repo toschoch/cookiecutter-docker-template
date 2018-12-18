@@ -4,5 +4,6 @@
 	"project_name": "Docker Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
 	"description": "A docker project doing awesome stuff.",
+    "docker_user": "user",
 	"version": "0.0.1"
 }
